@@ -21,25 +21,34 @@ function App() {
   }
 
   const removeItemToBasket = item => {
-    setStaffCount(staffCount - 1)
-    const index = staffInBasket.indexOf(item);
-    setStaffInBasket([staffInBasket.splice(index)])
+    let staffIndex;
 
-    console.log(staffInBasket)
+    staffInBasket.forEach((staff, index) => {
+      if (staff.id === item.id) {
+        staffIndex = index;
+        return;
+      }
+    })
+
+    const newStaffBag = [...staffInBasket]
+
+    newStaffBag.splice(staffIndex, 1);
+
+    console.log(newStaffBag)
+
+
+    setStaffInBasket(newStaffBag)
   }
 
   const state = {
     'removeItemToBasket': removeItemToBasket,
     'addItemToBasket': addItemToBasket,
-    'staffCount': staffCount,
     'staffInBasket': staffInBasket
   }
   return (
     <Context.Provider value={state}>
       <Switch>
-        <div className='container'>
-          <Header />
-        </div>
+        <Header />
         <Route exact path='/' component={Home} />
         <Route exact path='/basket' component={Basket} />
         <Route exact path='/itemDetails' component={ItemDetails} />

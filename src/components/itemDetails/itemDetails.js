@@ -12,10 +12,6 @@ function ItemDetails(props) {
 
     const item = props ? props.location.aboutProps.prop : JSON.parse(localStorage.getItem('activeItem'));
 
-    localStorage.setItem('activeItem', JSON.stringify(item));
-
-    console.log(item)
-
     useEffect(() => {
         const num = staffInBasket.reduce((a, b) => b.id === item.id ? a = a + 1 : a, 0);
         setInputVal(num)
