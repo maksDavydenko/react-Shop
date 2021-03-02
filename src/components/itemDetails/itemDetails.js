@@ -8,7 +8,7 @@ function ItemDetails(props) {
     const { addItemToBasket } = useContext(Context);
     const { removeItemToBasket } = useContext(Context);
     const { staffInBasket } = useContext(Context);
-    const [inputVal, setInputVal] = useState(1);
+    const [inputVal, setInputVal] = useState(0);
 
     let item = null;
 
@@ -20,7 +20,7 @@ function ItemDetails(props) {
     }
 
     useEffect(() => {
-        const num = staffInBasket.reduce((a, b) => b.id === item.id ? a = a + 1 : a, 1);
+        const num = staffInBasket.reduce((a, b) => b.id === item.id ? a = a + 1 : a, 0);
         setInputVal(num)
     }, [item.staffInBasket]);
 
@@ -46,7 +46,7 @@ function ItemDetails(props) {
                         <p className="item-details__name">{item.title}</p>
                         <p>{item.description}</p>
                         <p className="item-detaild__price">${(item.price).toFixed(2)}</p>
-                        <button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 1}>-</button>
+                        <button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 0}>-</button>
                         <input type="number" value={inputVal} readOnly />
                         <button onClick={() => { addItemToBasket(item); plusClick() }}>+</button>
 

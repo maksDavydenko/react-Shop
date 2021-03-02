@@ -12,12 +12,21 @@ import Header from './components/header/header';
 import ItemDetails from './components/itemDetails/itemDetails'
 
 function App() {
-  const [staffCount, setStaffCount] = useState(0);
   const [staffInBasket, setStaffInBasket] = useState([]);
 
   const addItemToBasket = item => {
-    setStaffCount(staffCount + 1)
-    setStaffInBasket([...staffInBasket, item])
+
+    const index = staffInBasket.indexOf(item);
+
+    if (index === -1) {
+      item.num = 1;
+      setStaffInBasket([...staffInBasket, item])
+    }
+    else {
+      const plusNum = [...staffInBasket];
+      plusNum[index].num = plusNum[index].num + 1;
+      setStaffInBasket(plusNum)
+    }
   }
 
   const removeItemToBasket = item => {
@@ -32,12 +41,13 @@ function App() {
 
     const newStaffBag = [...staffInBasket]
 
-    newStaffBag.splice(staffIndex, 1);
-
-    console.log(newStaffBag)
-
-
-    setStaffInBasket(newStaffBag)
+    if (newStaffBag[staffIndex].num === 1) {
+      newStaffBag.splice(staffIndex, 1);
+      setStaffInBasket(newStaffBag)
+    } else {
+      newStaffBag[staffIndex].num = newStaffBag[staffIndex].num - 1;
+      setStaffInBasket(newStaffBag)
+    }
   }
 
   const state = {
@@ -45,6 +55,7 @@ function App() {
     'addItemToBasket': addItemToBasket,
     'staffInBasket': staffInBasket
   }
+
   return (
     <Context.Provider value={state}>
       <Switch>
