@@ -5,9 +5,11 @@
     top: 0;
     background-color: #fff;
     max-width: 1400px;
+    padding: 10px 0;
   width: 80%;
   margin: 0 auto;
   min-width: 320px;
+  z-index: 2;
 }
 
 .basket {
