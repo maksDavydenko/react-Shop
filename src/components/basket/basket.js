@@ -8,7 +8,6 @@ function Basket() {
     return (
         <div className="basket">
             {staffInBasket.length > 0 ? staffInBasket.map(item => <BasketItem props={item} key={item.id} />) : <p>Loading...</p>}
-
             <div>
                 basket
             </div>

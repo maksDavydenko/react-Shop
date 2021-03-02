@@ -1,0 +1,11 @@
+.item-details__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    width: 10%;
+    min-width: 700px;
+}

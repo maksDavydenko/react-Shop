@@ -25,7 +25,7 @@ function ProducItem(props) {
         } exact>
             <img className="product__img" src={item.image} alt={item.title} />
             <p className="product__name">{item.title}</p>
-            <p className="product__price">${item.price}</p>
+            <p className="product__price">${(item.price).toFixed(2)}</p>
             <div className="more-info">See more</div>
         </NavLink>
     )
