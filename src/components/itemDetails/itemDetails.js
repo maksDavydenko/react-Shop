@@ -10,7 +10,17 @@ function ItemDetails(props) {
     const { staffInBasket } = useContext(Context);
     const [inputVal, setInputVal] = useState(0);
 
-    const item = props ? props.location.aboutProps.prop : JSON.parse(localStorage.getItem('activeItem'));
+    let item = null;
+
+    // props ? props.location.aboutProps.prop : 
+
+    try {
+        // Робимо щось, що може згенерувати виняткову ситуацію
+        item = props.location.aboutProps.prop;
+
+    } catch (error) {
+        item = JSON.parse(localStorage.getItem('activeItem'));
+    }
 
     useEffect(() => {
         const num = staffInBasket.reduce((a, b) => b.id === item.id ? a = a + 1 : a, 0);
@@ -31,13 +41,17 @@ function ItemDetails(props) {
 
 
     return (
-        <div className="item-details">
-            <img className="item-details__img" src={item.image} alt={item.title} />
-            <p className="item-details__name">{item.title}</p>
-            <p>{item.description}</p>
-            <button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 0}>-</button>
-            <input type="number" value={inputVal} readOnly />
-            <button onClick={() => { addItemToBasket(item); plusClick() }}>+</button>
+        <div className="container">
+            <div className="item-details">
+                <div className="item-details__inner">
+                    <img className="item-details__img" src={item.image} alt={item.title} />
+                    <p className="item-details__name">{item.title}</p>
+                    <p>{item.description}</p>
+                    <button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 0}>-</button>
+                    <input type="number" value={inputVal} readOnly />
+                    <button onClick={() => { addItemToBasket(item); plusClick() }}>+</button>
+                </div>
+            </div>
         </div>
     )
 }
