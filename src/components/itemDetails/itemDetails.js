@@ -10,18 +10,22 @@ function ItemDetails(props) {
     const { staffInBasket } = useContext(Context);
     const [inputVal, setInputVal] = useState(0);
 
-    let item = null;
+    const item = props.location.aboutProps.prop;
 
-    try {
-        item = props.location.aboutProps.prop;
 
-    } catch (error) {
-        item = JSON.parse(localStorage.getItem('activeItem'));
-    }
+    console.log(staffInBasket)
 
     useEffect(() => {
-        setInputVal(item.num ? item.num : 0);
-    }, [item.staffInBasket]);
+        let staffIndex = -1;
+
+        staffInBasket.forEach((staff, index) => {
+            if (staff.id === item.id) {
+                staffIndex = index;
+                setInputVal(staffInBasket[staffIndex].num)
+                return;
+            }
+        });
+    }, []);
 
     const minusClick = () => {
         if (inputVal - 1 < 0) {

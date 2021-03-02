@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './products.css';
 import ProductItem from '../productItem/productItem'
 
-
-
 function ProductWrap() {
 
     const [staff, setStaff] = useState(null);
@@ -14,12 +12,9 @@ function ProductWrap() {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
                 setStaff(data)
             });
-
     }, [])
-
 
     return (
         <div className="products">
