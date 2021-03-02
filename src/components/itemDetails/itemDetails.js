@@ -20,12 +20,11 @@ function ItemDetails(props) {
     }
 
     useEffect(() => {
-        const num = staffInBasket.reduce((a, b) => b.id === item.id ? a = a + 1 : a, 0);
-        setInputVal(num)
+        setInputVal(item.num ? item.num : 0);
     }, [item.staffInBasket]);
 
     const minusClick = () => {
-        if (inputVal - 1 < 1) {
+        if (inputVal - 1 < 0) {
             return;
         } else {
             setInputVal(inputVal => inputVal - 1);

@@ -9,7 +9,7 @@ function Basket() {
         <div className="basket">
             {staffInBasket.length > 0 ? staffInBasket.map(item => <BasketItem props={item} key={item.id} />) : <p>Loading...</p>}
             <div>
-                basket
+                Total: ${staffInBasket.reduce((a, b) => a += b.price * b.num, 0)}
             </div>
         </div>
     );

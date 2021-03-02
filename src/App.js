@@ -29,7 +29,7 @@ function App() {
     }
   }
 
-  const removeItemToBasket = item => {
+  const removeItemToBasket = (item, remove) => {
     let staffIndex;
 
     staffInBasket.forEach((staff, index) => {
@@ -41,7 +41,7 @@ function App() {
 
     const newStaffBag = [...staffInBasket]
 
-    if (newStaffBag[staffIndex].num === 1) {
+    if (newStaffBag[staffIndex].num === 1 || remove) {
       newStaffBag.splice(staffIndex, 1);
       setStaffInBasket(newStaffBag)
     } else {
@@ -53,7 +53,7 @@ function App() {
   const state = {
     'removeItemToBasket': removeItemToBasket,
     'addItemToBasket': addItemToBasket,
-    'staffInBasket': staffInBasket
+    'staffInBasket': staffInBasket,
   }
 
   return (
