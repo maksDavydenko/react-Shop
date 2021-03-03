@@ -9,11 +9,9 @@ function ItemDetails(props) {
     const { removeItemToBasket } = useContext(Context);
     const { staffInBasket } = useContext(Context);
     const [inputVal, setInputVal] = useState(0);
-
+    const [inBasket, setInBasket] = useState(false);
     const item = props.location.aboutProps.prop;
 
-
-    console.log(staffInBasket)
 
     useEffect(() => {
         let staffIndex = -1;
@@ -49,10 +47,12 @@ function ItemDetails(props) {
                         <p className="item-details__name">{item.title}</p>
                         <p>{item.description}</p>
                         <p className="item-detaild__price">${(item.price).toFixed(2)}</p>
-                        <button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 0}>-</button>
-                        <input type="number" value={inputVal} readOnly />
-                        <button onClick={() => { addItemToBasket(item); plusClick() }}>+</button>
-
+                        {inputVal >= 1 ? <button onClick={() => { removeItemToBasket(item, true); setInBasket(false) }}>remove from basket</button> :
+                            <button onClick={() => { addItemToBasket(item); setInputVal(1) }}>Add to basket</button>
+                        }
+                        {inputVal >= 1 ? <><button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 0}>-</button>
+                            <input type="number" value={inputVal} readOnly />
+                            <button onClick={() => { addItemToBasket(item); plusClick() }}>+</button></> : null}
                         <div className="total">
                             <div className="total__label">
                                 Total price
