@@ -47,7 +47,7 @@ function ItemDetails(props) {
                         <p className="item-details__name">{item.title}</p>
                         <p>{item.description}</p>
                         <p className="item-detaild__price">${(item.price).toFixed(2)}</p>
-                        {inputVal >= 1 ? <button onClick={() => { removeItemToBasket(item, true); setInBasket(false) }}>remove from basket</button> :
+                        {inputVal >= 1 ? <button onClick={() => { removeItemToBasket(item, true); setInputVal(0) }}>remove from basket</button> :
                             <button onClick={() => { addItemToBasket(item); setInputVal(1) }}>Add to basket</button>
                         }
                         {inputVal >= 1 ? <><button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 0}>-</button>

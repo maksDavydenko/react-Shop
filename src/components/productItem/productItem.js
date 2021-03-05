@@ -5,20 +5,23 @@ import { NavLink } from 'react-router-dom';
 
 
 function ProducItem(props) {
-    const { addItemToBasket } = useContext(Context);
-    const { removeItemToBasket } = useContext(Context);
     const item = props.props;
-
     const { staffInBasket } = useContext(Context);
     const staff = { staffInBasket: staffInBasket }
     const prop = Object.assign(item, staff);
+    const [inBasket, setInBasket] = useState(false);
 
-    const saveToLocalStorage = () => {
-        localStorage.setItem('activeItem', JSON.stringify(item));
-    }
+    useEffect(() => {
+        staffInBasket.forEach(staff => {
+            if (staff.id === item.id) {
+                setInBasket(true);
+                return;
+            }
+        });
+    }, []);
 
     return (
-        <NavLink className="product" onClick={saveToLocalStorage} to={{
+        <NavLink className="product" to={{
             pathname: 'itemDetails',
             aboutProps: { prop },
         }
@@ -27,6 +30,7 @@ function ProducItem(props) {
             <p className="product__name">{item.title}</p>
             <p className="product__price">${(item.price).toFixed(2)}</p>
             <div className="more-info">See more</div>
+            {inBasket ? <div className="label">In basket</div> : null}
         </NavLink>
     )
 }

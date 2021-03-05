@@ -9,16 +9,17 @@ function Header() {
 
     return (
         <header className="header">
-            <NavLink to="/">
-                LOGO
+            <div className="header__inner">
+                <NavLink to="/">
+                    REACT SHOP
                 </NavLink>
-            <NavLink to="/basket">
-                <div className="basket">
-                    {staffInBasket.length > 0 ? <div className="basket__count">{staffInBasket.length}</div> : null}
-                    <img src="https://cdn1.iconfinder.com/data/icons/ecommerce-1-9/48/2-512.png" alt="basket" width="25" height="25" />
-                </div>
-            </NavLink>
-
+                <NavLink to="/basket">
+                    <div className="basket">
+                        {staffInBasket.length > 0 ? <div className="basket__count">{staffInBasket.length}</div> : null}
+                        <img src="https://cdn1.iconfinder.com/data/icons/ecommerce-1-9/48/2-512.png" alt="basket" width="25" height="25" />
+                    </div>
+                </NavLink>
+            </div>
         </header>
     );
 }

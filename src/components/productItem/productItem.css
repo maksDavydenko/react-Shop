@@ -47,6 +47,11 @@
     height: 400px;
 }
 
-.product__price {
-    
+.label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    background-color: royalblue;
+    color: #fff;
 }

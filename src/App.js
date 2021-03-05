@@ -57,7 +57,7 @@ function App() {
   }
 
   return (
-    <Context.Provider value={state}>
+    <Context.Provider value={state} className="wrap">
       <Switch>
         <Header />
         <Route exact path='/' component={Home} />

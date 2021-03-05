@@ -1,15 +1,18 @@
 .header {
-    display: flex;
-    justify-content: space-between;
     position: sticky;
     top: 0;
-    background-color: #fff;
+    background-color: #00E0FF;
+    z-index: 2;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    min-width: 320px;
     max-width: 1400px;
     padding: 10px 0;
-  width: 80%;
-  margin: 0 auto;
-  min-width: 320px;
-  z-index: 2;
+    margin: 0 auto;
 }
 
 .basket {
