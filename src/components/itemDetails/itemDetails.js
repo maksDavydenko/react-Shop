@@ -40,6 +40,9 @@ function ItemDetails(props) {
 
     return (
         <div className="container">
+            <NavLink to="/">
+                Back to catalog
+    </NavLink>
             <div className="item-details">
                 <div className="item-details__inner">
                     <img className="item-details__img" src={item.image} alt={item.title} />

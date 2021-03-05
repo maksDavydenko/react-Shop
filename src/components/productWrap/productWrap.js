@@ -4,7 +4,6 @@ import ProductItem from '../productItem/productItem'
 
 
 function ProductWrap() {
-
     const [staff, setStaff] = useState(null);
 
     useEffect(() => {
@@ -21,11 +20,18 @@ function ProductWrap() {
             setStaff([...staff].sort((a, b) => b.price - a.price));
     }
 
+    const resetSort = () => {
+        fetch('https://fakestoreapi.com/products')
+            .then((response) => response.json())
+            .then((data) => setStaff(data));
+    }
+
     return (
         <>
             <div>
                 <button onClick={() => sortPrice('up')}>Sort price up</button>
                 <button onClick={() => sortPrice('down')}>Sort price down</button>
+                <button onClick={() => resetSort()}>Reset sort</button>
             </div>
             <div className="products">
                 {staff ? staff.map(item => <ProductItem props={item} key={item.id} />) : <p>Loading...</p>}

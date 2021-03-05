@@ -8,8 +8,9 @@ import { Context } from './contex';
 import Basket from './components/basket/basket';
 import Home from './components/home/home';
 import Header from './components/header/header';
+import ItemDetails from './components/itemDetails/itemDetails';
 
-import ItemDetails from './components/itemDetails/itemDetails'
+import Particles from 'react-particles-js';
 
 function App() {
   const [staffInBasket, setStaffInBasket] = useState([]);
@@ -50,21 +51,73 @@ function App() {
     }
   }
 
+  const removeAllFromBasket = () => {
+    setStaffInBasket([])
+  }
+
   const state = {
     'removeItemToBasket': removeItemToBasket,
     'addItemToBasket': addItemToBasket,
     'staffInBasket': staffInBasket,
+    'removeAllFromBasket': removeAllFromBasket
   }
 
+
+
+
   return (
-    <Context.Provider value={state} className="wrap">
-      <Switch>
-        <Header />
-        <Route exact path='/' component={Home} />
-        <Route exact path='/basket' component={Basket} />
-        <Route exact path='/itemDetails' component={ItemDetails} />
-      </Switch>
-    </Context.Provider>
+    <>
+      <Particles params={{
+        fpsLimit: 60,
+        background: {
+          color: "#ffffff"
+        },
+        backgroundMode: {
+          enable: true
+        },
+        particles: {
+          color: {
+            value: ["#000000", "#000000", "#000000"]
+          },
+          links: {
+            color: "#000000",
+            enable: true
+          },
+          move: {
+            enable: true,
+            speed: 6
+          },
+          size: {
+            value: 5,
+            random: {
+              enable: true,
+              minimumValue: 1
+            },
+            animation: {
+              enable: true,
+              speed: 2.5,
+              minimumValue: 1
+            }
+          },
+          opacity: {
+            value: 0.8,
+            random: {
+              enable: true,
+              minimumValue: 0.4
+            }
+          }
+        }
+      }}
+      />
+      <Context.Provider value={state} className="contentWrap">
+        <Switch>
+          <Header />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/basket' component={Basket} />
+          <Route exact path='/itemDetails' component={ItemDetails} />
+        </Switch>
+      </Context.Provider>
+    </>
   );
 }
 
