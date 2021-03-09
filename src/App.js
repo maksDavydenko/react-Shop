@@ -100,7 +100,7 @@ function App() {
             }
           },
           opacity: {
-            value: 0.8,
+            value: 1,
             random: {
               enable: true,
               minimumValue: 0.4

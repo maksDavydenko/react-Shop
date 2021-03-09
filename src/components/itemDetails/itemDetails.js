@@ -55,15 +55,18 @@ function ItemDetails(props) {
                         }
                         {inputVal >= 1 ? <><button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 0}>-</button>
                             <input type="number" value={inputVal} readOnly />
-                            <button onClick={() => { addItemToBasket(item); plusClick() }}>+</button></> : null}
-                        <div className="total">
-                            <div className="total__label">
-                                Total price
+                            <button onClick={() => { addItemToBasket(item); plusClick() }}>+</button>
+                            <div className="total">
+                                <div className="total__label">
+                                    Total price
                             </div>
-                            <div className="total__price">
-                                ${(inputVal * item.price).toFixed(2)}
+                                <div className="total__price">
+                                    ${(inputVal * item.price).toFixed(2)}
+                                </div>
                             </div>
-                        </div>
+
+                        </> : null}
+
                     </div>
                 </div>
             </div>

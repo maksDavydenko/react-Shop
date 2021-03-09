@@ -1,3 +1,14 @@
 .basket-item {
-    
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.basket-item__img {
+   width: 40%;
+}
+
+.basket-item__content {
+    max-width: 400px;
 }
