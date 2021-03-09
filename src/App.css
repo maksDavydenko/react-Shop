@@ -89,14 +89,13 @@
 .slider {
   position: relative;
   max-width: 500px;
-  width: 40%;
   margin-bottom: 40px;
 }
 
 .slider label {
   color: #888;
   font-size: 0.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: block;
   text-transform: capitalize;
 }
@@ -162,6 +161,7 @@
   display: block;
   height: 0.3rem;
   position: relative;
+  left: 10px;
   /* transition: left 0.3s ease-out, width 0.3s ease-out; */
 }
 

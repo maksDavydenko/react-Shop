@@ -14,6 +14,16 @@
     margin: 0 auto;
 }
 
+.logo {
+    font-size: 26px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo:hover {
+    text-decoration: underline;
+}
+
 .basket {
     position: relative;
 }

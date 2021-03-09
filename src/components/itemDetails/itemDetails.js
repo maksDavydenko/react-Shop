@@ -2,8 +2,16 @@ import React, { useState, useEffect, useContext, useRef } from 'react';
 import './itemDetails.css';
 import { Context } from '../../contex';
 import { NavLink } from 'react-router-dom';
-
-
+import backIcon from '../../arrowhead-thin-outline-to-the-left.svg';
+// import { faHome } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from 'fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCoffee } from '@fortawesome/fontawesome-free-solid'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from '@fortawesome/fontawesome-svg-core'
+// import { faCoffee as fasFaCoffee } from '@fortawesome/pro-solid-svg-icons'
+// import { faCoffee as farFaCoffee } from '@fortawesome/pro-regular-svg-icons'
+// import { faSearch } from "@fortawesome/free-solid-svg-icons";
 function ItemDetails(props) {
     const { addItemToBasket } = useContext(Context);
     const { removeItemToBasket } = useContext(Context);
@@ -40,7 +48,11 @@ function ItemDetails(props) {
 
     return (
         <div className="container">
+            <FontAwesomeIcon icon={['fas', 'fa-chevron-left']} className="fas fa-chevron-left " />
             <NavLink to="/">
+
+                <i className="fas fa-chevron-left"></i>
+                <FontAwesomeIcon className="fas fa-chevron-left" />
                 Back to catalog
     </NavLink>
             <div className="item-details">

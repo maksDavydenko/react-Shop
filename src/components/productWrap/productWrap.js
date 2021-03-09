@@ -19,7 +19,7 @@ function ProductWrap() {
             .then((data) => {
                 setStaff(data);
                 setStaffArr(data);
-                const sortArr = data.sort((a, b) => a.price - b.price);
+                const sortArr = [...data].sort((a, b) => a.price - b.price);
                 setSliderMin(sortArr[0].price);
                 setSliderMax(sortArr[sortArr.length - 1].price);
                 setRangeVal({ min: sortArr[0].price, max: sortArr[sortArr.length - 1].price })
@@ -42,7 +42,7 @@ function ProductWrap() {
             .then((response) => response.json())
             .then((data) => {
                 setStaff(data);
-                const sortArr = data.sort((a, b) => a.price - b.price);
+                const sortArr = [...data].sort((a, b) => a.price - b.price);
                 setSliderMin(sortArr[0].price)
                 setSliderMax(sortArr[sortArr.length - 1].price)
                 setRangeVal({ min: sortArr[0].price, max: sortArr[sortArr.length - 1].price })

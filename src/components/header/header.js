@@ -10,7 +10,7 @@ function Header() {
     return (
         <header className="header">
             <div className="header__inner">
-                <NavLink to="/">
+                <NavLink to="/" className="logo">
                     REACT SHOP
                 </NavLink>
                 <NavLink to="/basket">
