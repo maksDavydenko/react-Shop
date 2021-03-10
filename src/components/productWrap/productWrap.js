@@ -57,21 +57,26 @@ function ProductWrap() {
 
     return (
         <>
-            <div>
-                <button onClick={() => sortPrice('up')}>Sort price up <FaSortAmountUpAlt /></button>
-                <button onClick={() => sortPrice('down')}>Sort price down <FaSortAmountDownAlt /></button>
-                <div className="slider">
-                    <label>price</label>
-                    <InputRange
-                        minValue={sliderMin}
-                        maxValue={sliderMax}
-                        step={1}
-                        onChange={onChange}
-                        onChangeComplete={filterRange}
-                        value={rangeVal}
-                    />
+            <div className="sort">
+                <div className="sort-content">
+                    <div className="btn-wrap">
+                        <button className="sort-btn" onClick={() => sortPrice('up')}>Sort price up <FaSortAmountUpAlt /></button>
+                        <button className="sort-btn" onClick={() => sortPrice('down')}>Sort price down <FaSortAmountDownAlt /></button>
+                    </div>
+                    <div className="slider">
+                        <InputRange
+                            minValue={sliderMin}
+                            maxValue={sliderMax}
+                            step={1}
+                            onChange={onChange}
+                            onChangeComplete={filterRange}
+                            value={rangeVal}
+                        />
+                    </div>
                 </div>
-                <button onClick={() => resetSort()}>Reset sort</button>
+                <div>
+                    <button className="sort-btn" onClick={() => resetSort()}>Reset sort</button>
+                </div>
             </div>
             <div className="products">
                 {staff ? staff.map(item => <ProductItem props={item} key={item.id} />) : <p>Loading...</p>}
