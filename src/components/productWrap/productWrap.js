@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './products.css';
 import ProductItem from '../productItem/productItem';
 import InputRange from "react-input-range";
+import { FaSortAmountDownAlt } from "react-icons/fa";
+import { FaSortAmountUpAlt } from "react-icons/fa";
 
 
 import 'react-rangeslider/lib/index.css';
@@ -56,8 +58,8 @@ function ProductWrap() {
     return (
         <>
             <div>
-                <button onClick={() => sortPrice('up')}>Sort price up</button>
-                <button onClick={() => sortPrice('down')}>Sort price down</button>
+                <button onClick={() => sortPrice('up')}>Sort price up <FaSortAmountUpAlt /></button>
+                <button onClick={() => sortPrice('down')}>Sort price down <FaSortAmountDownAlt /></button>
                 <div className="slider">
                     <label>price</label>
                     <InputRange
