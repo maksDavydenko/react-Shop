@@ -60,8 +60,8 @@ function ProductWrap() {
             <div className="sort">
                 <div className="sort-content">
                     <div className="btn-wrap">
-                        <button className="sort-btn" onClick={() => sortPrice('up')}>Sort price up <FaSortAmountUpAlt /></button>
-                        <button className="sort-btn" onClick={() => sortPrice('down')}>Sort price down <FaSortAmountDownAlt /></button>
+                        <button className="btn" onClick={() => sortPrice('up')}>Sort price up <FaSortAmountUpAlt /></button>
+                        <button className="btn" onClick={() => sortPrice('down')}>Sort price down <FaSortAmountDownAlt /></button>
                     </div>
                     <div className="slider">
                         <InputRange
@@ -75,7 +75,7 @@ function ProductWrap() {
                     </div>
                 </div>
                 <div>
-                    <button className="sort-btn" onClick={() => resetSort()}>Reset sort</button>
+                    <button className="btn" onClick={() => resetSort()}>Reset sort</button>
                 </div>
             </div>
             <div className="products">

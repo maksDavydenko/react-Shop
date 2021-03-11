@@ -9,7 +9,6 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .slider {
@@ -23,7 +22,7 @@
     justify-content: space-between;
 }
 
-.sort-btn {
+.btn {
     color:#3f51b5;
     border: 1px solid #3f51b5;
     background-color: #fff;
@@ -34,10 +33,10 @@
     outline: #3f51b5;
 }
 
-.sort-btn:hover {
+.btn:hover {
     background-color: rgba(0, 224, 255, 0.2);
 }
 
-.sort-btn svg {
+.btn svg {
     margin-left: 10px;
 }

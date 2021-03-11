@@ -39,12 +39,10 @@ function ItemDetails(props) {
 
     return (
         <div className="container">
-
-            <NavLink to="/">
-
+            <NavLink to="/" className="back-link">
                 <GoChevronLeft />
-                Back to catalog
-    </NavLink>
+              Back to catalog
+            </NavLink>
             <div className="item-details">
                 <div className="item-details__inner">
                     <img className="item-details__img" src={item.image} alt={item.title} />
@@ -52,22 +50,28 @@ function ItemDetails(props) {
                         <p className="item-details__name">{item.title}</p>
                         <p>{item.description}</p>
                         <p className="item-detaild__price">${(item.price).toFixed(2)}</p>
-                        {inputVal >= 1 ? <button onClick={() => { removeItemToBasket(item, true); setInputVal(0) }}>remove from basket</button> :
-                            <button onClick={() => { addItemToBasket(item); setInputVal(1) }}>Add to basket</button>
-                        }
-                        {inputVal >= 1 ? <><button onClick={() => { removeItemToBasket(item); minusClick() }} disabled={inputVal === 0}>-</button>
-                            <input type="number" value={inputVal} readOnly />
-                            <button onClick={() => { addItemToBasket(item); plusClick() }}>+</button>
+                        {inputVal >= 1 ? <div className="controls-wrap">
+                            <div className="controls-btn-wrap">
+                                <button className="btn-controls" onClick={() => { removeItemToBasket(item); minusClick() }}>-</button>
+                                <input className="staff-num" type="number" value={inputVal} readOnly />
+                                <button className="btn-controls" onClick={() => { addItemToBasket(item); plusClick() }}>+</button>
+                            </div>
+
                             <div className="total">
                                 <div className="total__label">
-                                    Total price
+                                    Total price:
                             </div>
                                 <div className="total__price">
                                     ${(inputVal * item.price).toFixed(2)}
                                 </div>
-                            </div>
 
-                        </> : null}
+                            </div>
+                        </div>
+                            : null}
+                        {inputVal >= 1 ? <button className="btn" onClick={() => { removeItemToBasket(item, true); setInputVal(0) }}>remove from basket</button> :
+                            <button className="btn" onClick={() => { addItemToBasket(item); setInputVal(1) }}>Add to basket</button>
+                        }
+
 
                     </div>
                 </div>
