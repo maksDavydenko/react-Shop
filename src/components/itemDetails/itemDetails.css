@@ -102,3 +102,16 @@
 .staff-num::-webkit-outer-spin-button { 
     opacity: 1;
 }
+
+@media screen and (max-width: 1440px) {
+    .item-details__inner {
+        justify-content: center;
+    }
+
+    .item-details__img {
+        max-width: 100%;
+    }
+    .item-details__content {
+        max-width: 100%;
+    }
+}

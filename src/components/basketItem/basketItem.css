@@ -1,18 +1,20 @@
 .basket-item {
     margin: 40px 0 100px;
     width: 45vw;
+    max-width: 1440px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .basket-item__img {
-   width: 40%;
+    width: 320px;
+   /* flex-basis: 320px; */
 }
 
 .basket-item__content {
-    width: 40%;
-    max-width: 400px;
+    flex-basis: 320px;
+    /* max-width: 400px; */
    
 }
 
@@ -20,9 +22,3 @@
     margin-top: 40px;
 }
 
-.return-link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
