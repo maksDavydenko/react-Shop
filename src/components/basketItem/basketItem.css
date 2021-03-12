@@ -22,3 +22,22 @@
     margin-top: 40px;
 }
 
+@media screen and (max-width: 1440px) {
+    .basket-item  {
+      width: 70vw;
+    }
+
+    .basket-item__img {
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .order-block h2 {
+        font-size: 16px;
+    }
+}
+
+

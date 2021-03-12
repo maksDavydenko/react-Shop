@@ -49,3 +49,9 @@
         font-size: 14px;
     }
 }
+
+@media screen and (max-width: 650px) {
+    .btn {
+        font-size: 12px;
+    }
+}

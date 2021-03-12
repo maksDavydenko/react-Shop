@@ -33,13 +33,13 @@ function ItemDetails(props) {
                     <div className="item-details__content">
                         <h2 className="item-details__name">{item.title}</h2>
                         <p>{item.description}</p>
-                        <p className="item-detaild__price">${(item.price).toFixed(2)}</p>
+                        <h4 className="item-details__price">${(item.price).toFixed(2)}</h4>
                         {staffInBasket[staffIndex] && staffInBasket[staffIndex].num > -1 ?
                             <div className="controls-wrap">
                                 <ControlsBtn props={staffInBasket[staffIndex]} />
                                 <div className="total">
                                     <div className="total__label">
-                                        Total price:
+                                        Amount:
                                     </div>
                                     <div className="total__price">
                                         ${(staffInBasket[staffIndex].num * staffInBasket[staffIndex].price).toFixed(2)}

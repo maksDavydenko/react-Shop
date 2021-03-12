@@ -3,7 +3,7 @@ import { Context } from '../../contex';
 import BasketItem from '../basketItem/basketItem';
 import { NavLink } from 'react-router-dom';
 import { GoChevronLeft } from "react-icons/go";
-
+import ScrollToTop from "react-scroll-to-top";
 import './basket.css';
 
 function Basket() {
@@ -15,7 +15,9 @@ function Basket() {
     }
 
     return (
+
         <div className='container'>
+
             {staffInBasket.length > 0 ?
                 <>
                     <NavLink to="/" className="back-link">
@@ -43,8 +45,11 @@ function Basket() {
             </NavLink>
                 </div>
             }
+            <ScrollToTop className="clickToTop" color='#fff' smooth />
 
         </div>
+
+
     );
 }
 
