@@ -63,3 +63,12 @@
     background-color: royalblue;
     color: #fff;
 }
+
+@media screen and (max-width: 650px){
+    .product__img  {
+       width: 100%;
+       height: 100%;
+       display: block;
+       object-fit: cover;
+    }
+}

@@ -74,7 +74,7 @@ function ProductWrap() {
                         />
                     </div>
                 </div>
-                <div>
+                <div className="reset-wrap">
                     <button className="btn" onClick={() => resetSort()}>Reset sort</button>
                 </div>
             </div>
