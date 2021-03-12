@@ -1,0 +1,17 @@
+.return-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+    color: #3f51b5;
+    transition: 0.3s;
+}
+
+.return-link:hover {
+    color: #00E0FF
+}
+

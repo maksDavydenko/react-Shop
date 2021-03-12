@@ -8,7 +8,7 @@
     text-decoration: none;
 }
 
-.back-link s {
+.back-link svg {
     padding-top: 3px;
 }
 
@@ -84,13 +84,24 @@
     color: #00E0FF
 }
 
+.btn-right {
+    margin-left: auto;
+}
 .staff-num {
-    width: 40px;
+    width: 70px;
     border: none;
     outline: none;
-    text-align: right;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     color: #3f51b5;
 }
 
+.staff-num::-webkit-inner-spin-button, 
+.staff-num::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.staff-num::-webkit-inner-spin-button, 
+.staff-num::-webkit-outer-spin-button { 
+    opacity: 1;
+}

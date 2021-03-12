@@ -1,5 +1,6 @@
 .basket-item {
-    width: 50vw;
+    margin: 40px 0 100px;
+    width: 45vw;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -10,5 +11,12 @@
 }
 
 .basket-item__content {
+    width: 40%;
     max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.remove-btn {
+    margin-top: auto;
 }

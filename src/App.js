@@ -16,16 +16,22 @@ function App() {
   const [staffInBasket, setStaffInBasket] = useState([]);
 
   const addItemToBasket = item => {
+    let staffIndex = -1;
 
-    const index = staffInBasket.indexOf(item);
+    staffInBasket.forEach((staff, index) => {
+      if (staff.id === item.id) {
+        staffIndex = index;
+        return;
+      }
+    })
 
-    if (index === -1) {
+    if (staffIndex === -1) {
       item.num = 1;
       setStaffInBasket([...staffInBasket, item])
     }
     else {
       const plusNum = [...staffInBasket];
-      plusNum[index].num = plusNum[index].num + 1;
+      plusNum[staffIndex].num = plusNum[staffIndex].num + 1;
       setStaffInBasket(plusNum)
     }
   }
@@ -43,11 +49,13 @@ function App() {
     const newStaffBag = [...staffInBasket]
 
     if (newStaffBag[staffIndex].num === 1 || remove) {
+
+      console.log(newStaffBag[staffIndex].num);
       newStaffBag.splice(staffIndex, 1);
-      setStaffInBasket(newStaffBag)
+      setStaffInBasket(newStaffBag);
     } else {
       newStaffBag[staffIndex].num = newStaffBag[staffIndex].num - 1;
-      setStaffInBasket(newStaffBag)
+      setStaffInBasket(newStaffBag);
     }
   }
 
@@ -62,62 +70,15 @@ function App() {
     'removeAllFromBasket': removeAllFromBasket
   }
 
-
-
-
   return (
-    <>
-      <Particles params={{
-        fpsLimit: 60,
-        background: {
-          color: "#ffffff"
-        },
-        backgroundMode: {
-          enable: true
-        },
-        particles: {
-          color: {
-            value: ["#000000", "#000000", "#000000"]
-          },
-          links: {
-            color: "#000000",
-            enable: true
-          },
-          move: {
-            enable: true,
-            speed: 6
-          },
-          size: {
-            value: 5,
-            random: {
-              enable: true,
-              minimumValue: 1
-            },
-            animation: {
-              enable: true,
-              speed: 2.5,
-              minimumValue: 1
-            }
-          },
-          opacity: {
-            value: 1,
-            random: {
-              enable: true,
-              minimumValue: 0.4
-            }
-          }
-        }
-      }}
-      />
-      <Context.Provider value={state} className="contentWrap">
-        <Switch>
-          <Header />
-          <Route exact path='/' component={Home} />
-          <Route exact path='/basket' component={Basket} />
-          <Route exact path='/itemDetails' component={ItemDetails} />
-        </Switch>
-      </Context.Provider>
-    </>
+    <Context.Provider value={state} className="contentWrap">
+      <Switch>
+        <Header />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/basket' component={Basket} />
+        <Route exact path='/itemDetails' component={ItemDetails} />
+      </Switch>
+    </Context.Provider>
   );
 }
 
