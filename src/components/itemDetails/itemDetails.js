@@ -31,7 +31,7 @@ function ItemDetails(props) {
                 <div className="item-details__inner">
                     <img className="item-details__img" src={item.image} alt={item.title} />
                     <div className="item-details__content">
-                        <p className="item-details__name">{item.title}</p>
+                        <h2 className="item-details__name">{item.title}</h2>
                         <p>{item.description}</p>
                         <p className="item-detaild__price">${(item.price).toFixed(2)}</p>
                         {staffInBasket[staffIndex] && staffInBasket[staffIndex].num > -1 ?

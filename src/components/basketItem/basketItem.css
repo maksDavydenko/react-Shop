@@ -13,10 +13,16 @@
 .basket-item__content {
     width: 40%;
     max-width: 400px;
-    display: flex;
-    flex-direction: column;
+   
 }
 
 .remove-btn {
-    margin-top: auto;
+    margin-top: 40px;
+}
+
+.return-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
