@@ -1,9 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import { BrowserRouter as Switch, Route } from 'react-router-dom';
-
-// import { useState } from 'react';
 import { Context } from './contex';
 import Basket from './components/basket/basket';
 import Home from './components/home/home';
@@ -71,14 +68,36 @@ function App() {
   }
 
   return (
-    <Context.Provider value={state} className="contentWrap">
-      <Switch>
-        <Header />
-        <Route exact path='/' component={Home} />
-        <Route exact path='/basket' component={Basket} />
-        <Route exact path='/itemDetails' component={ItemDetails} />
-      </Switch>
-    </Context.Provider>
+    <>
+
+      <Context.Provider value={state} className="contentWrap">
+        <Particles params={{
+          particles: {
+            color: {
+              value: "#000000"
+            },
+            line_linked: {
+              color: {
+                value: "#000000"
+              }
+            },
+            number: {
+              value: 50
+            },
+            size: {
+              value: 3
+            }
+          }
+        }} />
+        <Switch>
+          <Header />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/basket' component={Basket} />
+          <Route exact path='/itemDetails' component={ItemDetails} />
+        </Switch>
+        {/* </Particles > */}
+      </Context.Provider>
+    </>
   );
 }
 

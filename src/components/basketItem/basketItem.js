@@ -13,7 +13,7 @@ function BasketItem(props) {
             <div className="basket-item__content">
                 <h2 className="basket-item__name">{item.title}</h2>
                 <p className="basket-item__price">Price: ${item.price}</p>
-                <p className="basket-item__total-price">Sum: ${(item.num * item.price).toFixed(2)}</p>
+                <p className="basket-item__total-price">Amount: ${(item.num * item.price).toFixed(2)}</p>
                 {item ?
                     <>
                         <ControlsBtn props={item} />

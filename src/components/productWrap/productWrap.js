@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './products.css';
 import ProductItem from '../productItem/productItem';
-// import ClickToTop from '../clickToTop/clickToTop'
 import InputRange from "react-input-range";
 import { FaSortAmountDownAlt } from "react-icons/fa";
 import { FaSortAmountUpAlt } from "react-icons/fa";
-import ScrollToTop from "react-scroll-to-top";
-import { AiOutlineArrowUp } from "react-icons/ai";
+import UpButton from "../upButton/upButton";
 
 
 import 'react-rangeslider/lib/index.css';
@@ -84,7 +82,9 @@ function ProductWrap() {
             <div className="products">
                 {staff ? staff.map(item => <ProductItem props={item} key={item.id} />) : <p>Loading...</p>}
             </div>
-            <ScrollToTop className="clickToTop" color='#fff' smooth />
+
+            <UpButton />
+            {/* <ScrollToTop className="clickToTop" color='#fff' smooth /> */}
         </>
     )
 }

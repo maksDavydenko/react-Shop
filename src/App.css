@@ -18,6 +18,8 @@ body {
   width: 80%;
   margin: 0 auto;
   background-color: #fff;
+  position: relative;
+  z-index: 1;
 }
 
 #tsparticles {
@@ -183,3 +185,4 @@ a {
   align-items: center;
   cursor: pointer;
 }
+

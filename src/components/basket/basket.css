@@ -1,5 +1,5 @@
 .return-link {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -12,9 +12,6 @@
     text-decoration: none;
 }
 
-/* .return-link:hover {
-    color: #00E0FF
-} */
 
 .order-block {
     display: flex;
@@ -24,4 +21,13 @@
 
 .order-btn {
    margin: 40px auto;
+}
+
+
+@media screen and (max-width: 750px) {
+    .return-link {
+        font-size: 18px;
+    }
+
+    
 }

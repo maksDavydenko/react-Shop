@@ -25,6 +25,10 @@
     font-size: 18px;
 }
 
+.item-details {
+    padding-bottom: 50px;
+}
+
 .item-details__inner {
     display: flex;
     justify-content: space-between;
@@ -115,3 +119,11 @@
         max-width: 100%;
     }
 }
+
+
+@media screen and (max-width: 750px) {
+    .back-link--big {
+      font-size: 24px;
+    }
+  
+  }
